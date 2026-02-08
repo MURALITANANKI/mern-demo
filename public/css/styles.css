@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.flex-reverse {
+    flex-direction: row-reverse;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.content-wrap {
+    width: 600px;
+    max-width: 100%;
+}
+
+.intro {
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+    font-style: italic;
+    color: #007893;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 24px;
+    font-style: italic;
+    color: #055e72;
+    margin: 5px 0 15px;
+    text-shadow: 2px 2px 2px #efefef;
+}
+
+.description {
+    margin-top: 0;
+    letter-spacing: 0.15px;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.contact-container {
+    background: #EEE;
+    min-height: 60px;
+    margin: 15px 0 25px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+    position: relative;
+}
+
+.contact-container tbody:empty::before {
+    content: "No contacts available. Please try fetching records by clicking above CTA";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    bottom: 8px;
+    color: #999999;
+}
+
+.contact-form {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.form-inputs-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+input:not([type="radio"]),
+input:not([type="checkbox"]) {
+    height: 36px;
+    border-radius: 5px;
+    border: 2px solid #666666;
+    padding: 5px;
+}
+
+input:focus {
+    outline: 1px solid #00718b;
+}
+
+.button {
+    background: #008dad;
+    color: #FFFFFF;
+    border: 2px solid #008dad;
+    border-radius: 5px;
+    padding: 8px 25px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #00718b;
+}
+
+.button:focus-visible {
+    outline: 2px solid #008dad;
+    outline-offset: 1px;
+}
+
+.button.button-secondary {
+    color: #008dad;
+    background: #FFF;
+}
+
+.button.button-secondary:hover {
+    color: #00718b;
+    background: #FFF;
+    border-color: #00718b;
+}
+.button.button-danger{
+    background: #C33939;
+    border-color: #C33939;
+}
+.button.button-danger:hover{
+    background-color: #9B2E2E;
+    border-color: #9B2E2E;
+}
+.button.button-danger:focus-visible{
+    outline-color: #C33939;
+}
+table .button {
+    padding: 0px 6px;
+    font-size: 12px;
+    line-height: 100%;
+    border-radius: 2px;
+    margin: 2px;
+}
+
+body.modal-open::before {
+    content: "";
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 8;
+    left: 0;
+    top: 0;
+}
+
+.contact-action-modal {
+    position: fixed;
+    background: #FFFFFF;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    z-index: 9;
+    display: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px 2px #00000060, inset 0 0px 4px 0 #00000060;
+}
+
+body.modal-open .contact-action-modal {
+    display: block;
+}
+
+.contact-action-modal>div {
+    padding: 15px 20px;
+    border-top: 1px solid #CECECE;
+}
+
+[modal-action="edit"] .delete-btn {
+    display: none;
+}
+
+[modal-action="edit"] .update-btn {
+    display: block;
+}
+
+[modal-action="delete"] .delete-btn {
+    display: block;
+}
+
+[modal-action="delete"] .update-btn {
+    display: none;
+}
+
+.modal-title {
+    margin: 0;
+    padding-right: 30px;
+    position: relative;
+}
+.modal-title::after {
+    content: attr(title-msg);
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    font-weight: normal;
+    color: #bd0000;
+}
+.modal-input-group {
+    display: table-row;
+}
+
+.modal-input-group label {
+    display: table-cell;
+}
+
+.modal-input-group input {
+    margin: 4px;
+}
+
+input[readonly] {
+    background: #EFEFEF;
+    color: #666;
+    border-color: #CCC;
+}
+.ready-for-deletion{
+    opacity: 0.5;
+}
+.record-updated{
+    background-color: #d2d2ff;
+}

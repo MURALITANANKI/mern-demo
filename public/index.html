@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Practice 1</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="intro-container">
+            <div class="intro content-wrap">
+                <h1 class="title">Henlo Hooman!</h1>
+                <h3 class="subtitle">Hope you're doing well...!</h3>
+                <p class="description">This is sample POC application developed using HTML, CSS, JavaScript, Node,
+                    Express and MongoDB. As part of learning there will be more features will be added in future state.
+                    Please explore our learning updated here by click of below Call To Action!</p>
+
+                <div class="contact-form content-wrap">
+                    <div class="form-inputs-wrapper">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Enter name" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" id="email" placeholder="Enter e-mail ID" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="mobile" id="mobile" maxlength="10"
+                                placeholder="Enter mobile no." />
+                        </div>
+                    </div>
+                    <div class="form-inputs-wrapper flex-reverse">
+                        <div class="form-group">
+                            <button type="button" class="button add-btn" id="addContact">Add Contact</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="button explore-btn" id="fetchContacts">Show contacts</button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="button button-secondary reset-btn" id="reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-container">
+                    <table width="100%" border="1" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contactsList"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="fullContactModal" class="contact-action-modal" modal-action="edit">
+            <div class="modal-header">
+                <h3 id="modalTitle" class="modal-title" title-msg="">Contact Info</h3>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="modalId" />
+                <div class="modal-input-group">
+                    <label for="modalName">Name:</label>
+                    <input type="text" id="modalName" />
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="modalEmail">Email:</label>
+                    <input type="text" id="modalEmail" />
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="modalMobile">Mobile:</label>
+                    <input type="text" id="modalMobile" maxlength="10" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-inputs-wrapper flex-reverse">
+                    <div class="form-group">
+                        <button type="button" class="button update-btn" id="updateContact">Update Contact</button>
+                        <button type="button" class="button button-danger delete-btn" id="deleteContact">Delete
+                            Contact</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="button button-secondary close-btn" id="closeModal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
